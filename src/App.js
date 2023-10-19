@@ -3,6 +3,7 @@ import { useState } from "react";
 
 function App() {
   const [ratio, setRatio] = useState(0);
+  const [ratioChange, setRatioChange] = useState(1);
   function PlusRatio() {
     setRatio(ratio + 1);
     console.log("RATIO +1");
@@ -10,20 +11,17 @@ function App() {
   }
   const [nratio, setNratio] = useState(0);
   function NegativeRatio() {
-    setNratio(nratio - 1);
-    console.log("NRATIO - 1");
-    console.log("nratio ir" + nratio);
+    setNratio(nratio - ratioChange);
   }
-  const [gratio, setGratio] = useState(0);
-  function GuestRatio() {
-    
+  function handleRatioChange(event) {
+    setRatioChange(event.target.value);
   }
   return ( 
   <div className="App">
-    <button onClick={PlusRatio}>RATIO +1</button>
-    <button onClick={NegativeRatio}>RATIO -1</button>
+    <input type="number" value={ratioChange} onChange={handleRatioChange}></input>
+    <button onClick={PlusRatio}>RATIO +{ratioChange}</button>
+  <button onClick={NegativeRatio}>RATIO -{ratioChange}</button>
     <h1>{ratio}</h1>
-    <h2>{nratio}</h2>
   </div>
   );
 }
