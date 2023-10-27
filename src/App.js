@@ -1,6 +1,7 @@
 import Counter from "./Counter";
 import Hello from "./Hello";
 import Check from "./Check";
+import LabeledCheck from "./labelCheck";
 
 function App() {
   const names = ["Mini P.E.K.K.A", "Mini P.E.K.K.A", "Mini P.E.K.K.A"];
